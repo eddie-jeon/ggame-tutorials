@@ -19,6 +19,12 @@ ball.scale = 0.1
 ball.dir = 1
 ball.go = True
 
+# Sounds
+pew1_asset = SoundAsset("sounds/pew1.mp3")
+pew1 = Sound(pew1_asset)
+pop_asset = SoundAsset("sounds/reappear.mp3")
+pop = Sound(pop_asset)
+
 def reverse(b):
     b.dir *= -1
     
@@ -30,5 +36,14 @@ def step():
             ball.x -= ball.dir
             reverse(ball)    
 
+# Handle the space key
+def spaceKey(event):
+    ball.x = 
+    ball.y = 
+
+#Handle the mouse position
+def 
 myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
+# Set up event handlers for the app
+myapp.listenKeyEvent('keydown', 'space', spaceKey)
 myapp.run(step)
