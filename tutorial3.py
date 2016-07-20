@@ -38,7 +38,7 @@ def step():
             reverse(ball)    
 '''
 # Handle the W key
-def dKey(event):
+def wKey(event):
     ball.y -= 5
     
 #Handle the A key
