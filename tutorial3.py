@@ -1,3 +1,4 @@
+
 from ggame import App, RectangleAsset, ImageAsset, SoundAsset
 from ggame import LineStyle, Color, Sprite, Sound
 
@@ -27,7 +28,7 @@ pop = Sound(pop_asset)
 
 def reverse(b):
     b.dir *= -1
-    
+'''    
 # Set up function for handling screen refresh
 def step():
     if ball.go:
@@ -35,15 +36,28 @@ def step():
         if ball.x + ball.width > SCREEN_WIDTH or ball.x < 0:
             ball.x -= ball.dir
             reverse(ball)    
+'''
+# Handle the W key
+def dKey(event):
+    ball.y -= 5
+    
+#Handle the A key
+def aKey(event):
+    ball.x -= 5
+    
+#Handle the S key
+def sKey(event):
+    ball.y += 5
+    
+#Handle the D key
+def dKey(event):
+    ball.x += 5
 
-# Handle the space key
-def spaceKey(event):
-    ball.x = 
-    ball.y = 
 
-#Handle the mouse position
-def 
-myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
+myapp = App()
 # Set up event handlers for the app
-myapp.listenKeyEvent('keydown', 'space', spaceKey)
-myapp.run(step)
+myapp.listenKeyEvent('keydown', 'w', wKey)
+myapp.listenKeyEvent('keydown', 'a', aKey)
+myapp.listenKeyEvent('keydown', 's', sKey)
+myapp.listenKeyEvent('keydown', 'd', dKey)
+myapp.run()
